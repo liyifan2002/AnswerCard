@@ -1,0 +1,32 @@
+<!doctype html>
+<title>查看作业</title>
+
+<style type="text/css">
+td{border:1px #0066ff solid;padding:3px;}
+table{border-collapse:collapse;}
+    .wrong {
+        color: red;
+    }
+</style>
+<h2>姓名：{{r["name"]}}</h2>
+<h3>客观题</h3>
+<table id="objec">
+    <tr>
+        {% for n in r["obj"].keys() %}
+        <td class="">{{n}}</td>
+        {% endfor %}
+    </tr>
+    <tr>
+        {% for a in r["obj"].values() %}
+        {% if a[1]==0%}<td class="wrong">
+        {% else %}<td>
+        {% endif %}
+        {{a[0]}}</td>
+        {% endfor %}
+    <tr>
+</table>
+<h3>主观题</h3>
+{% for n,a in r["sub"].items() %}
+<p>{{n}} 得分:{{a[1]}}/<a href="/correct/{{n}}">互评</a></p>
+<img src="/cardimg{{a[0]}}">
+{% endfor %}

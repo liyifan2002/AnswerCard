@@ -1,0 +1,11 @@
+<!doctype html>
+<title>作业互评-{{quesno}}</title>
+  <form action="/correct" method="post" enctype="multipart/form-data">
+    <img src="/cardimg{{a}}">
+    
+    <input type="hidden" name="quesno" value="{{quesno}}" />
+    <input type="hidden" name="stuid" value="{{stuid}}" />
+
+    <p>输入得分 <input name="score" type="number" min="0" max="20" /></p>
+    <input type="submit" value="提交" />
+    </form>

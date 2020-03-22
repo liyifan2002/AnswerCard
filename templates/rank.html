@@ -1,0 +1,23 @@
+<!doctype html>
+<title>查看排名</title>
+
+<style type="text/css">
+td{border:1px #000000 solid;padding:3px;}
+table{border-collapse:collapse;}
+</style>
+<h2>作业排名</h2>
+
+<table>
+    <tr>
+        <td>姓名</td>
+        <td>得分</td>
+    </tr>
+    {% for s in ranks %}
+    <tr>
+        <td><a href="/result/{{s[1]}}">{{s[0]}}</a></td>
+        <td>{{s[2]}}</td>
+    </tr>
+    {% endfor %}
+  
+
+</table>
